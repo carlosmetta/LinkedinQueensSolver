@@ -1,6 +1,6 @@
 import streamlit as st
 import numpy as np
-import Pillow
+from PIL import Image
 import subprocess
 import sys
 
@@ -40,12 +40,12 @@ if 'solution_grid' not in st.session_state:
 # File Upload
 uploaded_file = st.file_uploader("Upload a Grid Image", type=["jpg", "jpeg", "png"])
 
-if uploaded_file:
-    # Read and store image
-    file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
-    image_bgr = cv2.imdecode(file_bytes, cv2.IMREAD_COLOR)
-    st.session_state.image_rgb = cv2.cvtColor(image_bgr, cv2.COLOR_BGR2RGB)
+if uploaded_file is not None:
+    # Open the image using PIL
+    image = Image.open(uploaded_file).convert("RGB")  # Ensure RGB mode
+    st.session_state.image_rgb = image
 
+    # Display the image
     st.image(st.session_state.image_rgb, caption="Uploaded Image", use_column_width=True)
 
     # Button 1: Generate Grid

@@ -1,8 +1,0 @@
-streamlit
-pillow
-matplotlib
-numpy
-pandas
-scikit-learn
-pulp
-OpenCV

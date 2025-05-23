@@ -1,15 +1,11 @@
 import streamlit as st
 import numpy as np
-
+import Pillow
 import subprocess
 import sys
 
-# Install opencv if not already installed
-try:
-    import cv2
-except ModuleNotFoundError:
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "opencv-python-headless"])
-    import cv2
+
+
 
 import matplotlib.pyplot as plt
 

@@ -17,8 +17,7 @@ st.title("♟️ Clustered Grid Solver from Image")
 
 # Sidebar Inputs
 st.sidebar.header("Settings")
-grid_size = st.sidebar.number_input("Grid Size (n x n)", min_value=2, max_value=20, value=9)
-
+grid_size = st.slider("Grid Size (n x n)", min_value=2, max_value=20, value=9)
 # Session State Initialization
 if 'df' not in st.session_state:
     st.session_state.df = None

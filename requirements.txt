@@ -1,7 +1,7 @@
-streamlit
-opencv-python-headless
-matplotlib
-numpy
-pandas
-scikit-learn
-pulp
+streamlit==1.40.0
+opencv-python-headless==4.10.0.84
+matplotlib==3.9.2
+numpy==1.26.4
+pandas==2.2.3
+scikit-learn==1.5.2
+pulp==3.3.2
